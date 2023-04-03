@@ -5,7 +5,7 @@ class Employee extends Person{
         this.clients = clients;
     }
 
-    get  clientNames(){
+    get clientNames(){
         let clients = this.clients;
         let stringRes = '\n';
         for (let i = 0; i < clients.length; i++) {
@@ -19,7 +19,7 @@ class Employee extends Person{
         return `Nome: ${this.name} ${this.surname}
 Clienti: ${this.clientNames}
 Guadagno totale: ${this.totalEarnings()}
-Miglior cliente: 
+Miglior cliente: \n
 ${this.bestClient()}` 
     }
 
@@ -48,11 +48,11 @@ ${this.bestClient()}`
         return bestClient.toString();
     }
 
-    addClient(client) {
-        return this.clients.push(client)
+    addClient(newClient) {
+        this.clients.push(newClient)
     }
 
-    removeClient(client) {
-        return this.clients.pop(client)
+    removeClient(exClient) {
+        this.clients.pop(exClient)
     }
 }

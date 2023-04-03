@@ -14,8 +14,8 @@ class Order {
     toString(){
         return `Prodotto: ${this.product}
 Quantità: ${this.quantity}
-Costo Unitario: ${this.uPrice.toFixed(2)} €
-Costo Totale: ${this.getTotalPrice().toFixed(2)} €`
+Costo Unitario: ${this.uPrice.toFixed(2)}€
+Costo Totale: ${this.getTotalPrice().toFixed(2)}€`
     }
 
 }

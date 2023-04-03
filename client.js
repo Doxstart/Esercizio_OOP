@@ -1,13 +1,13 @@
 class Client extends Person{
 
-    constructor(name, surname, address, orders){
+    constructor(name, surname, address, orders = []){
         super(name, surname);
         this.address = address;
         this.orders = orders;
     }
     
-    addOrder(order){
-       return this.orders.push(order);
+    addOrder(newOrder){
+       return this.orders.push(newOrder);
     }
 
     totalOrderPrice(){
@@ -18,6 +18,13 @@ class Client extends Person{
         }
         return totalPrice;
     }
+
+    //totalOrderPrice2(){
+    //return this.orders.reduce((previous, current)=> {
+    //previous + = current.totalOrderPrice();
+    //return previous;
+    //}, 0);    
+    //}
 
     get multipleOrdersInString(){
         let stringRes = '';
@@ -33,10 +40,11 @@ class Client extends Person{
         return `${super.toString()}
 Indirizzo: ${this.address}
 Numero Ordini: ${this.orders.length}
-Spesa Totale: ${this.totalOrderPrice().toFixed(2)} € 
+Spesa Totale: ${this.totalOrderPrice().toFixed(2)}€ 
 Lista Ordini: 
 --------------------------------------------------------------------------
-${this.orders}`
+${this.orders.join('\n')}\n` + 
+`-------------------------------------------------------------------------`
     }
 
 } 

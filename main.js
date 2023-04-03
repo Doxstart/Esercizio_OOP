@@ -23,3 +23,21 @@ const order5 = new Order('Riso', 5, 3.50);
 
 client1.addOrder(order5);
 console.log(client1.toString());
+
+console.log(Math.sqrt(16)); //CLASSE STATICA, NON DIPENDE DA NESSUNA CLASSE 
+
+const numbers = [3, 4, 5, 9];
+
+console.log(Utility.filter(numbers, (element) => element > 4));
+
+function multiplyBy3(element){
+    return element * 3;
+}
+
+console.log(Utility.map(numbers, multiplyBy3));
+
+function sum(number1, number2){
+    return number1 + number2;
+}
+
+console.log(Utility.reduce(numbers, sum, 0));
